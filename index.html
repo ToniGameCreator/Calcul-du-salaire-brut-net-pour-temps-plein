@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur salaire brut en net</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>Calculateur de salaire</h1>
+            <p>Estimez votre salaire net mensuel en Belgique</p>
+        </header>
+
+        <section class="formulaire">
+
+            <h2>Informations personnelles</h2>
+
+            <label for="salaire">Salaire brut mensuel (€)</label>
+            <input type="number" id="salaire" min="0.01"
+                   step="0.01" placeholder="Ex : 3000">
+
+            <label for="statut">Statut professionnel</label>
+            <select id="statut">
+                <option value="1">Employé</option>
+                <option value="2">Ouvrier</option>
+            </select>
+
+            <label for="enfants">Nombre d'enfants à charge</label>
+            <input type="number" id="enfants" min="0"
+                   step="1" value="0">
+
+            <label for="situation">Situation du ménage</label>
+            <select id="situation">
+                <option value="1">Ménage avec 1 revenu</option>
+                <option value="2">Ménage avec 2 revenus</option>
+            </select>
+
+            <button onclick="calculerSalaire()">
+                Calculer mon salaire net
+            </button>
+
+        </section>
+
+        <section id="resultats" hidden>
+
+            <div class="resultat-final">
+                <p>Votre salaire net mensuel estimé</p>
+                <h2 id="netFinal">0,00 €</h2>
+            </div>
+
+            <h2>Détail du calcul</h2>
+
+            <div class="ligne">
+                <span>Salaire brut</span>
+                <strong id="brut"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>ONSS</span>
+                <strong id="onss"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Salaire imposable mensuel</span>
+                <strong id="imposable"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Volet A</span>
+                <strong id="voletA"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Volet B</span>
+                <strong id="voletB"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Impôt mensuel</span>
+                <strong id="impotMensuel"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Réduction volet A</span>
+                <strong id="reductionA"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Réduction volet B</span>
+                <strong id="reductionB"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Précompte professionnel</span>
+                <strong id="precompte"></strong>
+            </div>
+
+            <div class="ligne">
+                <span>Cotisation spéciale</span>
+                <strong id="cotisation"></strong>
+            </div>
+
+            <div class="ligne total">
+                <span>SALAIRE NET FINAL</span>
+                <strong id="netDetail"></strong>
+            </div>
+
+            <button class="secondaire" onclick="window.print()">
+                Imprimer les résultats
+            </button>
+
+        </section>
+
+        <p id="erreur" class="erreur"></p>
+
+        <footer>
+            Estimation indicative basée sur les paramètres
+            intégrés au calculateur.
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

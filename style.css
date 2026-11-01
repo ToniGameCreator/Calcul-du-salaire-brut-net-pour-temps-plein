@@ -1,0 +1,179 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f4f9;
+    color: #243047;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #172b4d;
+}
+
+header p {
+    color: #718096;
+}
+
+.formulaire h2,
+#resultats h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d8deea;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #3679db;
+    border-color: #3679db;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background: #2463c5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #174b9b;
+}
+
+.resultat-final {
+    background: #edf5ff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.resultat-final p {
+    color: #536781;
+    font-size: 15px;
+}
+
+.resultat-final h2 {
+    color: #2463c5;
+    font-size: 36px;
+    margin-top: 12px;
+}
+
+.ligne {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 5px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.ligne strong {
+    text-align: right;
+}
+
+.total {
+    margin-top: 10px;
+    border-top: 2px solid #2463c5;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.total strong {
+    color: #2463c5;
+}
+
+.secondaire {
+    background: #26364e;
+}
+
+.erreur {
+    color: #d32f2f;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 12px;
+    color: #8792a5;
+    line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 22px 17px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .ligne {
+        font-size: 13px;
+    }
+
+    .resultat-final h2 {
+        font-size: 29px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+    }
+
+    .formulaire, .secondaire {
+        display: none;
+    }
+
+    #resultats {
+        display: block !important;
+    }
+}
